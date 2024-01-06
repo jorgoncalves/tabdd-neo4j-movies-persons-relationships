@@ -1,0 +1,4 @@
+- MATCH (movie:Movie)<-[:ACTED_IN]-(actor:Person) RETURN movie, collect(actor) AS cast
+- MATCH (movie:Movie) WHERE movie.title CONTAINS "Matrix" RETURN movie
+- MATCH (person:Person) RETURN person
+- MATCH (person:Person)-[:ACTED_IN]->(movie:Movie) WHERE person.name CONTAINS "Keanu" RETURN movie

@@ -1,0 +1,8 @@
+.search-bar {
+    align-self: baseline;
+    position: relative;
+}
+
+.search-bar input {
+    border: none;
+}

@@ -1,0 +1,28 @@
+@startuml  
+hide circle
+hide empty members
+
+skinparam class {
+    BackgroundColor Snow
+    ArrowColor DarkGray
+    BorderColor Black
+    BorderThickness 1    
+}
+
+
+class Movie  {
+    title: String
+    tagline: String
+    released: Date
+}
+
+class Person {
+    name: String
+    born: Date
+}
+
+Movie --> Person: written by
+Movie --> Person: directed by
+Movie --> Person: produced by
+Movie --> Person: reviewed by
+Movie --> Person: acted in

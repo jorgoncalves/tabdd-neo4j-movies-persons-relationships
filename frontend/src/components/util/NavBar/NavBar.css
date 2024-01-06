@@ -1,0 +1,26 @@
+nav {
+    display: block;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34;
+    top: 0;
+    color: inherit;
+}
+
+nav ul  {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem;
+}
+
+nav ul li {
+    padding: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+}

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    neo4j:
+      image: neo4j:5.13.0
+      container_name: neo4j
+      environment:
+        - NEO4J_AUTH=${NEO4J_USER}/${NEO4J_PASSWORD}
+        - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+        - NEO4J_server_directories_import=/import
+      ports:
+        - 7687:7687
+        - 7474:7474
+      volumes:
+        - ./data:/import
+      command: >
+        bash -c "neo4j-admin dbms set-initial-password ${NEO4J_PASSWORD} && neo4j start && sleep 10 && cypher-shell -u ${NEO4J_USER} -p ${NEO4J_PASSWORD} -f /import/load-movies.cypher && tail -f /var/lib/neo4j/logs/neo4j.log"
